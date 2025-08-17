@@ -15,7 +15,7 @@ Building a portfolio website for a Product Manager with 8 years experience at BM
 
 1. ADAS Simulator - Advanced Driver Assistance Systems tool
 2. Android Studio Plugin - Developer productivity tool
-3. Unity Blog - Technical content platform
+3. Documentation AI Assistant - Intelligent routing system
 
 ## Technical Stack
 

@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export function Navigation() {
@@ -16,9 +17,13 @@ export function Navigation() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-bold text-xl text-gray-900"
           >
-            PM Portfolio
+            <Link
+              href="/"
+              className="font-bold text-xl text-gray-900 hover:text-gray-700 transition-colors"
+            >
+              PM Portfolio
+            </Link>
           </motion.div>
 
           <motion.div
@@ -27,24 +32,24 @@ export function Navigation() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="hidden md:flex items-center space-x-8"
           >
-            <a
-              href="#home"
+            <Link
+              href="/"
               className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
             >
               Home
-            </a>
-            <a
-              href="#case-studies"
+            </Link>
+            <Link
+              href="/case-studies"
               className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
             >
               Case Studies
-            </a>
-            <a
-              href="#blog"
+            </Link>
+            <Link
+              href="/blog"
               className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
             >
               Blog
-            </a>
+            </Link>
             <Button
               variant="outline"
               size="sm"

@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { MetricCard } from '@/components/custom/MetricCard';
 import { Button } from '@/components/ui/button';
 
@@ -60,12 +61,14 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
-          <Button
-            size="lg"
-            className="bg-black text-white hover:bg-gray-800 transition-colors px-8 py-3 text-base"
-          >
-            View Case Studies
-          </Button>
+          <Link href="/case-studies">
+            <Button
+              size="lg"
+              className="bg-black text-white hover:bg-gray-800 transition-colors px-8 py-3 text-base"
+            >
+              View Case Studies
+            </Button>
+          </Link>
           <Button
             variant="outline"
             size="lg"

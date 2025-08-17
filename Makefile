@@ -25,7 +25,7 @@ build:
 
 deploy:
 	npm run build
-	vercel --prod
+	vercel --prod --yes
 
 audit:
 	npm run type-check

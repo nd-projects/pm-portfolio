@@ -12,9 +12,9 @@
     "years_experience": 8
   },
   "main_projects": [
-    "ADAS Simulator - Advanced Driver Assistance Systems tool",
+    "ADAS Test Simulator - Advanced Driver Assistance Systems tool",
     "Android Studio Plugin - Developer productivity tool",
-    "Unity Blog - Technical content platform"
+    "Documentation AI Assistant - Intelligent routing system"
   ],
   "tech_stack": {
     "framework": "Next.js 14 with App Router",
