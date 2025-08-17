@@ -53,5 +53,6 @@
     "src/app/globals.css"
   ],
   "content_creation": ["src/content/**/*.mdx", "src/app/**/*.tsx"],
-  "performance": ["next.config.ts", "postcss.config.mjs", "public/**/*"]
+  "performance": ["next.config.ts", "postcss.config.mjs", "public/**/*"],
+  "includeCoAuthoredBy": false
 }
