@@ -1,0 +1,57 @@
+{
+  "project_context": {
+    "type": "PM Portfolio Website",
+    "owner": "Product Manager with 8 years BMW experience",
+    "focus": "Developer tools and automotive software",
+    "target_audience": "Senior PM/Director roles in tech companies"
+  },
+  "key_metrics": {
+    "safety_coverage": "85%",
+    "active_users": "212+",
+    "products_shipped": 3,
+    "years_experience": 8
+  },
+  "main_projects": [
+    "ADAS Simulator - Advanced Driver Assistance Systems tool",
+    "Android Studio Plugin - Developer productivity tool",
+    "Unity Blog - Technical content platform"
+  ],
+  "tech_stack": {
+    "framework": "Next.js 14 with App Router",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS",
+    "animations": "Framer Motion",
+    "charts": "Recharts",
+    "icons": "Lucide React",
+    "ui_components": "shadcn/ui"
+  },
+  "coding_standards": {
+    "components": "Functional components with TypeScript interfaces",
+    "styling": "Tailwind utility classes only (no inline styles)",
+    "animations": "Framer Motion for all animations",
+    "design": "Mobile-first responsive design",
+    "accessibility": "Proper ARIA labels",
+    "seo": "Optimization with meta tags"
+  },
+  "file_naming": {
+    "components": "PascalCase (e.g., MetricCard.tsx)",
+    "utilities": "camelCase (e.g., formatNumber.ts)",
+    "content": "kebab-case (e.g., adas-simulator.mdx)"
+  },
+  "always_include": [
+    "CLAUDE.md",
+    "package.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "components.json",
+    "docs/portfolio-implementation-guide.md",
+    "docs/pm-portfolio-prd.md"
+  ],
+  "component_development": [
+    "src/components/**/*.tsx",
+    "src/lib/utils.ts",
+    "src/app/globals.css"
+  ],
+  "content_creation": ["src/content/**/*.mdx", "src/app/**/*.tsx"],
+  "performance": ["next.config.ts", "postcss.config.mjs", "public/**/*"]
+}

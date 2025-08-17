@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "eamodio.gitlens",
+    "christian-kohler.path-intellisense",
+    "dsznajder.es7-react-js-snippets",
+    "csstools.postcss",
+    "mdx-js.mdx",
+    "yoavbls.pretty-ts-errors",
+    "styled-components.vscode-styled-components"
+  ]
+}
