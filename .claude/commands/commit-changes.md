@@ -4,25 +4,54 @@ argument-hint: [optional commit message]
 description: Auto-commit all current changes with a smart generated message
 ---
 
-Auto-commit all current changes with a smart generated message
+Auto-commit all current changes with a smart generated message that follows project commitlint rules
 
-1. Check git status to see what's changed
-2. Add all files to staging (git add .)
-3. Analyze the changes and generate a descriptive commit message based on:
-   - Files modified (components, content, config, etc.)
-   - Type of changes (feat, fix, style, docs, refactor)
-   - Brief description of what was accomplished
-4. Commit with the generated message (DO NOT include co-authoring details)
-5. Show git log --oneline -3 to confirm the commit was successful
+## Process
 
-Examples of good commit messages:
+1. **Check git status** to see what's changed
+2. **Add all files to staging** (git add .)
+3. **Analyze recent commits** for style patterns (git log --oneline -5)
+4. **Generate commit message** following project rules
+5. **Attempt commit** with retry mechanism if commitlint fails
+6. **Show git log --oneline -3** to confirm success
 
-- "feat: add animated Hero section with metrics"
-- "fix: resolve TypeScript errors in MetricCard"
-- "style: improve responsive design for mobile"
-- "docs: update portfolio implementation guide"
-- "refactor: optimize animation performance"
+## Commit Message Rules
 
-Follow conventional commit format: type(scope): description
+### Format: `type: Description of changes`
 
-IMPORTANT: Generate clean commit messages without any co-authoring or tool attribution details.
+**Allowed types:** feat, fix, docs, style, refactor, perf, test, chore, content, deploy
+
+**Subject case:** Sentence-case (First word capitalized, rest lowercase)
+
+- ✅ "Add blog system with draft management"
+- ❌ "add blog system with draft management"
+- ❌ "Add Blog System With Draft Management"
+
+**Body line length:** Max 100 characters per line
+
+- Break long descriptions into multiple lines
+- Use proper line breaks for readability
+
+### Examples from project history:
+
+- "feat: Add MDX case study system with feature flag content management"
+- "fix: Remove duplicate content in blog landing page"
+- "docs: Update commit-changes command to exclude co-authoring details"
+- "fix: Resolve TypeScript errors and improve navigation"
+- "refactor: Optimize animation performance"
+
+## Retry Logic
+
+If commitlint fails:
+
+1. Parse the error message for specific rule violations
+2. Regenerate message following the failed rule
+3. Re-attempt commit (max 3 attempts)
+4. If still fails, ask user for manual message
+
+## Important Notes
+
+- Files may be reformatted by pre-commit hooks (prettier/eslint)
+- Re-add any files modified during pre-commit process
+- Generate clean messages without co-authoring or tool attribution
+- Focus on WHAT changed and WHY, not HOW
