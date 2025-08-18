@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import CaseStudiesClient from './case-studies-client';
+import { getAllCaseStudies } from '@/lib/mdx';
 
 export const metadata: Metadata = {
   title: 'Case Studies | PM Portfolio - Developer Tools That Transform Teams',
@@ -17,5 +18,6 @@ export const metadata: Metadata = {
 };
 
 export default function CaseStudiesPage() {
-  return <CaseStudiesClient />;
+  const caseStudies = getAllCaseStudies();
+  return <CaseStudiesClient caseStudies={caseStudies} />;
 }
