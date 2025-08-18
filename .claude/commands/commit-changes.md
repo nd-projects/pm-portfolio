@@ -32,7 +32,7 @@ Auto-commit all current changes with a smart generated message that follows proj
 - Break long descriptions into multiple lines
 - Use proper line breaks for readability
 
-### Examples from project history:
+### Examples from project history
 
 - "feat: Add MDX case study system with feature flag content management"
 - "fix: Remove duplicate content in blog landing page"
