@@ -8,6 +8,25 @@ description: Create a thought leadership blog post with SEO optimization
 
 Create a thought leadership blog post about: $ARGUMENTS
 
+## File Creation Process
+
+1. **Create MDX file** in `src/content/blog/` using kebab-case naming (e.g., `building-developer-tools.mdx`)
+2. **Add slug to discovery** - Update `getAllBlogPosts()` function in `src/lib/mdx.ts` to include the new slug
+3. **Set initial status** to `'draft'` for development
+
+## Required MDX Frontmatter
+
+```yaml
+---
+title: 'Compelling Title: Specific Outcome/Learning'
+description: 'One-sentence hook that explains the value proposition and target audience (max 160 chars for SEO)'
+status: 'draft'  # Use 'draft' initially, change to 'live' when ready to publish
+category: 'Product Strategy' | 'Engineering Leadership' | 'Developer Experience' | 'Team Culture'
+publishedAt: 'Month DD, YYYY'
+tags: ['Developer Experience', 'Product Strategy', 'Engineering Culture', 'etc']
+---
+```
+
 ## Blog Post Structure
 
 ### Opening Hook
@@ -57,6 +76,27 @@ Create accompanying:
 - LinkedIn post (1300 chars max) with key insight
 - Twitter/X thread (5-7 tweets) with main points
 - One quotable snippet for sharing
+
+## Draft/Live Workflow
+
+### Development Phase
+
+- Set `status: 'draft'` in frontmatter
+- Run `SHOW_DRAFT_BLOG_POSTS=true npm run dev` to preview locally
+- Test content, formatting, and links
+
+### Publishing Phase
+
+- Change `status: 'draft'` to `status: 'live'` when ready
+- Run `npm run build` to include in static generation
+- Deploy to make live
+
+## Technical Requirements
+
+- **File location**: `src/content/blog/[slug].mdx`
+- **Slug format**: kebab-case (e.g., `my-blog-post.mdx`)
+- **Discovery**: Add slug to `getAllBlogPosts()` array in `src/lib/mdx.ts`
+- **Preview**: Use `SHOW_DRAFT_BLOG_POSTS=true` environment variable for draft content
 
 ## Tone and Voice
 
