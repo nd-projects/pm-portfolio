@@ -12,7 +12,7 @@ Auto-commit all current changes with a smart generated message
    - Files modified (components, content, config, etc.)
    - Type of changes (feat, fix, style, docs, refactor)
    - Brief description of what was accomplished
-4. Commit with the generated message
+4. Commit with the generated message (DO NOT include co-authoring details)
 5. Show git log --oneline -3 to confirm the commit was successful
 
 Examples of good commit messages:
@@ -24,3 +24,5 @@ Examples of good commit messages:
 - "refactor: optimize animation performance"
 
 Follow conventional commit format: type(scope): description
+
+IMPORTANT: Generate clean commit messages without any co-authoring or tool attribution details.
