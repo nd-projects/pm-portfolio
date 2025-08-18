@@ -43,23 +43,23 @@ export default function CaseStudiesClient({
 }: CaseStudiesClientProps) {
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Case Studies
           </h1>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl">
+          <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-3xl">
             Deep dives into the developer tools and platforms that transformed
             how BMW engineers build safer automotive software.
           </p>
         </motion.div>
 
         {caseStudies.length > 0 ? (
-          <div className="grid gap-8 lg:gap-12">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-1 lg:gap-12">
             {caseStudies.map((study, index) => (
               <motion.div
                 key={study.slug}
@@ -67,8 +67,8 @@ export default function CaseStudiesClient({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-8 hover:shadow-lg transition-all duration-300">
-                  <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+                <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300">
+                  <div className="flex flex-col lg:flex-row lg:items-start gap-6 md:gap-8">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-4">
                         <Badge variant="outline" className="text-xs">

@@ -15,19 +15,19 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto pt-20"
+      className="min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-12 max-w-7xl mx-auto pt-20"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center lg:text-left"
+        className="text-center md:text-left"
       >
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight"
         >
           Building Developer Tools
           <br />
@@ -38,7 +38,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto lg:mx-0"
+          className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto md:mx-0"
         >
           8 years transforming how 200+ BMW engineers build, test, and deploy
           automotive software
@@ -48,7 +48,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto lg:mx-0"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto md:mx-0"
         >
           {metrics.map((metric, i) => (
             <MetricCard key={i} {...metric} delay={0.4 + i * 0.1} />
@@ -59,7 +59,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+          className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
         >
           <Link href="/case-studies">
             <Button
