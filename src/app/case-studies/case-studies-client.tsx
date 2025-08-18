@@ -147,22 +147,6 @@ export default function CaseStudiesClient({
             </div>
           </motion.div>
         )}
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-16 p-8 bg-gray-50 rounded-lg"
-        >
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
-            More Case Studies Coming Soon
-          </h3>
-          <p className="text-gray-600 mb-4">
-            I&apos;m actively developing detailed case studies for each project.
-            Check back soon for in-depth analysis and lessons learned.
-          </p>
-          <Badge variant="secondary">Expected: End of Week 2</Badge>
-        </motion.div>
       </div>
     </main>
   );
