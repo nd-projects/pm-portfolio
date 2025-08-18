@@ -29,9 +29,11 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight"
         >
-          Building Developer Tools
+          Technical Product Manager
           <br />
-          <span className="text-blue-600">That Ship Safer Cars</span>
+          <span className="text-blue-600">
+            Building Developer Tools That Ship Safer Cars
+          </span>
         </motion.h1>
 
         <motion.p
@@ -41,7 +43,8 @@ export function Hero() {
           className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto md:mx-0"
         >
           8 years transforming how 200+ BMW engineers build, test, and deploy
-          automotive software
+          automotive software. Technical PM specializing in ADAS platforms and
+          developer productivity tools.
         </motion.p>
 
         <motion.div
