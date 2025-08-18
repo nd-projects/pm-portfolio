@@ -406,22 +406,22 @@ function verifyPassword(authHeader: string) {
 ### Week 1: Foundation & Hero
 
 - [x] Direct to code
-- [ ] Next.js setup with all dependencies
-- [ ] Hero section with animated metrics
-- [ ] Basic navigation and layout
-- [ ] Deploy to Vercel (get feedback URL early)
+- [x] Next.js setup with all dependencies
+- [x] Hero section with animated metrics
+- [x] Basic navigation and layout
+- [x] Deploy to Vercel (get feedback URL early)
 
 ### Week 2: Products & First Case Study
 
 - [ ] Product grid with hover effects
 - [ ] ADAS Simulator case study (public version)
 - [ ] Code showcase component
-- [ ] Timeline/career journey
+- [x] Timeline/career journey
 
 ### Week 3: Social Proof & Thought Leadership
 
 - [ ] Testimonials section (gather 3-5)
-- [ ] Blog infrastructure
+- [x] Blog infrastructure
 - [ ] Write "Why Every PM Should Code" post
 - [ ] Newsletter signup (ConvertKit/Substack?)
 
