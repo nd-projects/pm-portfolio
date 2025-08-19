@@ -11,7 +11,7 @@ metrics:
     value: '85%'
     description: 'Critical test scenarios covered'
   - label: 'CI/CD Performance'
-    value: '<1s'
+    value: 'Under 1s'
     description: 'Scenario execution time'
   - label: 'Engineer Adoption'
     value: '95%'
@@ -21,15 +21,11 @@ metrics:
     description: 'Critical test cases built'
 ---
 
-# ADAS Test Simulator: Building the Product Roadmap
-
-_How I led product development for a simulation platform that achieved 85% safety coverage with sub-second CI/CD performance, transforming how BMW engineers test autonomous driving systems._
-
 ## The Challenge: Understanding User Needs in Safety-Critical Testing
 
 BMW's autonomous driving program faced a critical bottleneck: **how do you test safety-critical systems without endangering lives?**
 
-As Product Manager, I needed to understand not just the technical challenge, but how engineers actually worked with testing tools daily.
+As Product Owner, I needed to understand not just the technical challenge, but how engineers actually worked with testing tools daily.
 
 ### User Research: The Engineer's Dilemma
 
@@ -102,7 +98,7 @@ class FastScenario:
         self.expected_behaviors = load_safety_requirements()
 
     def execute_fast(self, adas_system):
-        # Optimized for CI/CD: <1s execution target
+        # Optimized for CI/CD: under 1s execution target
         start_time = time.time()
         result = validate_cached_response(
             adas_system.process(self.scenario_cache)
@@ -143,7 +139,7 @@ class FastScenario:
 
 - **10 high-priority scenarios** based on user interviews
 - **Basic CI/CD integration** with BMW's existing Jenkins pipeline
-- **Performance baseline**: Target <1s per scenario
+- **Performance baseline**: Target under 1s per scenario
 - **Single platform support**: BMW X5 (most-used development vehicle)
 
 **Key Deliverables:**
