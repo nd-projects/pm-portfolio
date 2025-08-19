@@ -64,13 +64,15 @@ export function Navigation() {
               >
                 Blog
               </Link>
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-gray-300 text-gray-700 hover:bg-gray-50"
-              >
-                Contact
-              </Button>
+              <Link href="/contact">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-gray-300 text-gray-700 hover:bg-gray-50"
+                >
+                  Contact
+                </Button>
+              </Link>
             </motion.div>
 
             {/* Mobile menu button */}
@@ -189,13 +191,15 @@ export function Navigation() {
                     Blog
                   </Link>
                   <div className="pt-4">
-                    <Button
-                      variant="outline"
-                      className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 min-h-[44px]"
-                      onClick={closeMobileMenu}
-                    >
-                      Contact
-                    </Button>
+                    <Link href="/contact">
+                      <Button
+                        variant="outline"
+                        className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 min-h-[44px]"
+                        onClick={closeMobileMenu}
+                      >
+                        Contact
+                      </Button>
+                    </Link>
                   </div>
                 </nav>
               </div>
