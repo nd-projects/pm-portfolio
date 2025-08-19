@@ -1,63 +1,62 @@
 ---
-title: 'Android Studio Plugin: From 2 Hours to 2 Minutes'
-description: 'How user research with 50+ developers led to a plugin that gained 212 active users and 25% adoption in 6 weeks, with analytics foundation for predictive bug detection.'
+title: 'Android Studio Plugin: From 1 Hour to 5 Minutes'
+description: 'How user research with 5 power users led to a plugin that gained 30% adoption in 6 weeks, with analytics foundation for predictive bug detection.'
 status: 'draft'
 category: 'Growth Story'
 technologies:
-  [
-    'Kotlin',
-    'IntelliJ Platform SDK',
-    'Analytics',
-    'A/B Testing',
-    'Android',
-    'Emulator APIs',
-  ]
+  ['Kotlin', 'IntelliJ Platform SDK', 'Analytics', 'Android', 'Countly']
 timeline: '8 months'
 team_size: '4 engineers + UX researcher'
 metrics:
   - label: 'Active Users'
-    value: '212'
+    value: '200+'
     description: 'Daily active developers'
   - label: 'Adoption Rate'
-    value: '25%'
+    value: '30%'
     description: 'In first 6 weeks'
   - label: 'Time Saved'
     value: '2+ hours/week'
     description: 'Per developer'
   - label: 'Emulator Setup'
-    value: '2 minutes'
-    description: 'Down from 2+ hours'
+    value: '5 minutes'
+    description: 'Down from 1+ hour'
 ---
-
-# Android Studio Plugin: From 2 Hours to 2 Minutes
-
-_How user research with 50+ developers led to a plugin that gained 212 active users and 25% adoption in 6 weeks, with analytics foundation for predictive bug detection._
 
 ## The Problem: Death by a Thousand Emulator Setups
 
-BMW's mobile app development was hemorrhaging developer productivity. Every Android developer was spending **2+ hours per week** on emulator configuration—a seemingly minor task that was crushing team velocity.
+BMW's infotainment development was hemorrhaging developer productivity. Every Android developer was spending **2+ hours per week** on emulator configuration — a seemingly minor task that was crushing team velocity.
 
 ### The Hidden Cost
 
-- **50+ developers** across automotive infotainment teams
-- **100+ hours/week** lost to repetitive setup tasks
-- **Context switching** between development and environment management
-- **Inconsistent configurations** leading to hard-to-reproduce bugs
-- **New developer onboarding** taking 2-3 days instead of hours
+<TileList columns={5}>
+  <Tile>**800+ developers** across automotive infotainment teams</Tile>
+  <Tile>**100+ hours/week** lost to repetitive setup tasks</Tile>
+  <Tile>
+    **Context switching** between development and environment management
+  </Tile>
+  <Tile>**Inconsistent configurations** leading to hard-to-reproduce bugs</Tile>
+  <Tile>
+    **New developer onboarding** taking 2-3 days (at best) instead of hours
+  </Tile>
+</TileList>
 
 But here's what made this particularly painful: **emulator setup wasn't the real work**. It was preventing engineers from building the innovative automotive software that customers actually cared about.
 
-## Research: Shadowing 50+ Developers
+## Research: Interviewing 5 Senior Developers
 
-Instead of building what I assumed developers needed, I spent 6 weeks embedded with development teams to understand the real workflow pain points.
+Instead of building what I assumed developers needed, I spent several hours to interview 5 of the companies Android engineers to understand the real workflow pain points. These were principle engineers and lead architects who are the go-tos for technical consultation within their domain.
 
 ### Discovery Process
 
-- **Shadow sessions** with developers across 8 different teams
-- **Time-tracking studies** to quantify actual impact
-- **Workflow mapping** from feature request to deployment
-- **Pain point prioritization** through developer surveys
-- **Competitive analysis** of existing IntelliJ plugins
+<TileList columns={5}>
+  <Tile>**Shadow sessions** with developers across 5 different domains</Tile>
+  <Tile>**Time-tracking studies** to quantify actual impact</Tile>
+  <Tile>**Workflow mapping** from feature request to deployment</Tile>
+  <Tile>**Pain point prioritization** through developer surveys</Tile>
+  <Tile>**Competitive analysis** of existing IntelliJ plugins</Tile>
+</TileList>
+
+{/* Boiler-plate below */}
 
 ### Key Insights
 
@@ -214,21 +213,18 @@ config_bug_correlations = {
 
 ## Key Lessons: Growth Strategy for Developer Tools
 
-### 1. Research First, Build Second
+### 1. Talk to Experts
 
-The 6 weeks spent shadowing developers was the most valuable time invested. Understanding real workflows prevented building the wrong solution.
+### 2. Release early and often
 
-### 2. Analytics from Day One
+### 3. Analytics don't paint the full picture
 
-Having usage data from the first beta user enabled rapid iteration and demonstrated clear value to stakeholders.
-
-### 3. Adoption Strategy Matters
+### 4. Marketing is hard
 
 - **Champions program**: Identified enthusiastic early adopters in each team
 - **Lunch-and-learns**: Informal demos that felt like sharing cool tools, not mandated adoption
-- **Gradual rollout**: Prevented infrastructure overload and allowed for feedback integration
 
-### 4. Think Platform, Not Just Tool
+### 5. Think Platform, Not Just Tool
 
 Building analytics infrastructure enabled the predictive bug detection vision—thinking beyond the immediate problem unlocked much greater value.
 
