@@ -99,7 +99,8 @@ function shouldShowBlogPost(status: string): boolean {
 
 export function getAllCaseStudies(): CaseStudy[] {
   const slugs = [
-    'adas-simulator',
+    'adas-simulator-product',
+    'adas-simulator-opensource',
     'android-studio-plugin',
     'documentation-ai-assistant',
   ];
