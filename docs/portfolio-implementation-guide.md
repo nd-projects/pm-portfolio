@@ -88,6 +88,235 @@ pm-portfolio/
 
 ---
 
+## 📝 MDX Enhanced Content System
+
+### MDX Setup and Configuration
+
+The portfolio uses MDX for enhanced content authoring, allowing React components to be embedded directly in Markdown files.
+
+#### MDX Dependencies Installation
+
+```bash
+# Core MDX dependencies
+npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+npm install next-mdx-remote
+
+# Configure Next.js for MDX
+# next.config.ts already includes:
+# pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx']
+# experimental: { mdxRs: true }
+```
+
+#### Custom MDX Components Architecture
+
+```typescript
+// mdx-components.tsx - Root-level MDX components configuration
+import type { MDXComponents } from 'mdx/types';
+import { TileList, Tile } from '@/components/mdx/TileList';
+import { MetricGrid, Metric } from '@/components/mdx/MetricGrid';
+import { CalloutBox } from '@/components/mdx/CalloutBox';
+import { TechStack } from '@/components/mdx/TechStack';
+
+export function useMDXComponents(components: MDXComponents): MDXComponents {
+  return {
+    // Custom components
+    TileList, Tile, MetricGrid, Metric, CalloutBox, TechStack,
+
+    // Styled HTML elements
+    h1: ({ children }) => <h1 className="text-3xl font-bold...">{children}</h1>,
+    // ... other element overrides
+
+    ...components,
+  };
+}
+```
+
+#### MDX Processing Pipeline
+
+```typescript
+// src/lib/mdx.ts
+import { compileMDX } from 'next-mdx-remote/rsc';
+import { TileList, Tile } from '../components/mdx/TileList';
+// ... other imports
+
+export async function getCaseStudyWithMDX(
+  slug: string
+): Promise<CaseStudyWithMDX | null> {
+  const { content: compiledContent } = await compileMDX({
+    source: content,
+    components: {
+      TileList,
+      Tile,
+      MetricGrid,
+      Metric,
+      CalloutBox,
+      TechStack,
+      // ... styled HTML elements
+    },
+    options: { parseFrontmatter: false },
+  });
+
+  return { slug, frontmatter, content: compiledContent };
+}
+```
+
+### Custom MDX Component Implementation
+
+#### 1. TileList Component
+
+```tsx
+// src/components/mdx/TileList.tsx
+interface TileListProps {
+  children: React.ReactNode;
+  columns?: 1 | 2 | 3 | 4;
+}
+
+export function TileList({ children, columns = 3 }: TileListProps) {
+  const gridCols = {
+    1: 'grid-cols-1',
+    2: 'grid-cols-1 md:grid-cols-2',
+    3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+    4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
+  };
+
+  return (
+    <div className={cn('grid gap-4 my-6 not-prose', gridCols[columns])}>
+      {children}
+    </div>
+  );
+}
+```
+
+#### 2. MetricGrid Component
+
+```tsx
+// src/components/mdx/MetricGrid.tsx
+interface MetricProps {
+  label: string;
+  value: string;
+  description?: string;
+}
+
+export function Metric({ label, value, description }: MetricProps) {
+  return (
+    <div className="bg-gray-50 rounded-lg p-6 text-center">
+      <div className="text-2xl font-bold text-blue-600 mb-2">{value}</div>
+      <div className="font-semibold text-gray-900 mb-1">{label}</div>
+      {description && (
+        <div className="text-sm text-gray-600">{description}</div>
+      )}
+    </div>
+  );
+}
+```
+
+### Content Authoring Workflow
+
+#### File Structure
+
+```text
+src/content/
+├── case-studies/
+│   ├── adas-simulator-product.mdx
+│   ├── android-studio-plugin.mdx
+│   └── documentation-ai-assistant.mdx
+└── blog/
+    └── building-developer-tools-that-scale.mdx
+```
+
+#### MDX Content Template
+
+```mdx
+---
+title: 'Project Title'
+description: 'Brief project description'
+status: 'live'
+category: 'Product Strategy'
+technologies: ['React', 'TypeScript']
+timeline: '6 months'
+team_size: '5 engineers'
+metrics:
+  - label: 'Users'
+    value: '100+'
+    description: 'Active daily users'
+---
+
+# Project Title
+
+Regular markdown content works as usual.
+
+<CalloutBox type="tip" title="Key Insight">
+  Important strategic insight or lesson learned.
+</CalloutBox>
+
+<TileList columns={3}>
+  <Tile>**Feature A** Description of key capability</Tile>
+  <Tile>**Feature B** Another important aspect</Tile>
+</TileList>
+
+<MetricGrid columns={2}>
+  <Metric label="Impact" value="50%" description="Performance improvement" />
+  <Metric label="Adoption" value="95%" description="Team usage rate" />
+</MetricGrid>
+
+<TechStack
+  technologies={['React', 'TypeScript', 'Next.js']}
+  title="Technology Stack"
+  variant="tiles"
+/>
+```
+
+### MDX Troubleshooting
+
+#### Common Issues and Solutions
+
+1. **Component Not Rendering**
+
+   ```mdx
+   <!-- ❌ Wrong: lowercase component -->
+
+   <tilelist columns={3}>
+
+   <!-- ✅ Correct: PascalCase -->
+
+   <TileList columns={3}>
+   ```
+
+2. **Props Not Working**
+
+   ```mdx
+   <!-- ❌ Wrong: string instead of number -->
+
+   <TileList columns="3">
+
+   <!-- ✅ Correct: number in curly braces -->
+
+   <TileList columns={3}>
+   ```
+
+3. **MDX Parsing Errors**
+   - Check for unclosed tags
+   - Escape special characters: `<`, `>`, `&`
+   - Use `under 30` instead of `<30` in content
+   - Avoid numbered lists starting with `1.` (use `1.` with space)
+
+4. **Build Failures**
+
+   ```bash
+   # Clear Next.js cache if encountering build issues
+   rm -rf .next
+   npm run build
+   ```
+
+### Performance Considerations
+
+- MDX compilation happens at build time for static content
+- Components are tree-shaken and optimized
+- CSS classes use Tailwind's purging for minimal bundle size
+- `not-prose` class prevents Tailwind typography conflicts
+
+---
+
 ## 📊 Component Specifications
 
 ### 1. Hero Section with Metrics Bar
